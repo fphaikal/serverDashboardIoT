@@ -28,6 +28,13 @@ db.connect((err) => {
   console.log('MySQL Connected...');
 });
 
+app.get('/', (req, res) => {
+  res.send({
+      message: 'API Dashboard IoT',
+      author: 'https://github.com/fphaikal',
+  })
+});
+
 // Endpoint untuk registrasi pengguna
 app.post('/api/register', async (req, res) => {
   const { username, password } = req.body;
